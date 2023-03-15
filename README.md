@@ -13,6 +13,11 @@ Requirements:
 
     v18.15.0
 
+3. AWS access
+
+
+Basically, AWS is costly and cannot use my own account.
+
 Below are the different methods to run the API:
 
 A. Steps to run the API using POSTMAN:
@@ -23,10 +28,9 @@ A. Steps to run the API using POSTMAN:
 4. Create AWS access keys. Please refer to this link, https://bref.sh/docs/installation/aws-keys.html, for the better guide.
 5. Setup those keys by running:
     serverless config credentials --provider aws --key <key> --secret <secret>
-6.  Then run this command:
-    php artisan vendor:publish --tag=serverless-config
-
-    Note: Please make sure to run php artisan config:clear after.
+6.  Then go to serverless.yaml,
+    make sure that the values indicated there connected to the AWS. The data that is configured in your AWS make sure that it is the same in serverless.yaml.
+    Note: Please make sure to run php artisan config:clear and php artisan config:cache after.
 7. Run 'serverless deploy' command without quotes
 8. Once the command finishes, it should print a URL like this one (sample only): 
 https://3pjp2yiw97.execute-api.us-east-1.amazonaws.com
@@ -61,10 +65,9 @@ B. Steps to run the API in any BROWSER:
 4. Create AWS access keys. Please refer to this link, https://bref.sh/docs/installation/aws-keys.html, for the better guide.
 5. Setup those keys by running:
     serverless config credentials --provider aws --key <key> --secret <secret>
-6.  Then run this command:
-    php artisan vendor:publish --tag=serverless-config
-
-    Note: Please make sure to run php artisan config:clear after.
+6.  Then go to serverless.yaml,
+    make sure that the values indicated there connected to the AWS. The data that is configured in your AWS make sure that it is the same in serverless.yaml.
+    Note: Please make sure to run php artisan config:clear and php artisan config:cache after.
 7. Run 'serverless deploy' command without quotes
 8. Once the command finishes, it should print a URL like this one (sample only): 
 https://3pjp2yiw97.execute-api.us-east-1.amazonaws.com
